@@ -12,7 +12,7 @@ RUN npm run build
 
 FROM nginx:alpine
 
-COPY --from=builder /app/dist/frontend-dev-cloud /usr/share/nginx/html
+COPY --from=builder /app/dist/frontend-dev-cloud/browser /usr/share/nginx/html
 
 EXPOSE 80
 
