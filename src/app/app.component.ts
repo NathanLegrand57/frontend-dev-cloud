@@ -2,6 +2,7 @@ import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     try {
-      this.http.get('http://localhost:3000/api/food').subscribe((data: any) => {
+      this.http.get(`${environment.apiUrl}/food`).subscribe((data: any) => {
         console.log('Retrieved data successfully', data);
         this.foodList = data;
       });
