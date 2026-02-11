@@ -21,6 +21,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('Environment:', environment);
+    console.log('API URL:', environment.apiUrl);
     try {
       this.http.get(`${environment.apiUrl}/food`).subscribe((data: any) => {
         console.log('Retrieved data successfully', data);
