@@ -2,6 +2,8 @@
 
 <h2>Liste des plats disponibles</h2>
 
-<li *ngFor="let food of foodList">{{ food.name }} - {{ food.description }}</li>
+<li *ngFor="let food of foodList">
+  {{ food.id }} - {{ food.name }} - {{ food.description }}
+</li>
 
 <router-outlet />
