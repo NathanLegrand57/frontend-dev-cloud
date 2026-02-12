@@ -1,9 +1,21 @@
 <h1>LEGRAND Nathan</h1>
 
-<h2>Liste des plats disponibles</h2>
+<h2>Liste des plats disponibles :</h2>
 
-<li *ngFor="let food of foodList">
-  {{ food.id }} - {{ food.name }} - {{ food.description }}
+<li>
+  <ol *ngFor="let food of foodList">
+    {{
+      food.id
+    }}
+    -
+    {{
+      food.name
+    }}
+    -
+    {{
+      food.description
+    }}
+  </ol>
 </li>
 
 <router-outlet />
