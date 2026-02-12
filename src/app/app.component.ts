@@ -32,4 +32,14 @@ export class AppComponent implements OnInit {
       console.error(error);
     }
   }
+
+  deleteFood(id: number) {
+    this.http.delete(`${environment.apiUrl}/food/${id}`).subscribe({
+      next: () => {
+        console.log(`Food ${id} deleted`);
+        this.foodList = this.foodList.filter((food) => food.id !== id);
+      },
+      error: (err) => console.error('Delete failed', err),
+    });
+  }
 }
